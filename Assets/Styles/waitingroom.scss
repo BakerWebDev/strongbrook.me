@@ -1,0 +1,10 @@
+#waitingroom { 
+	.red { FONT-WEIGHT: bold; COLOR: Red; PADDING-LEFT: 10px; }
+	#requestedparentidstatus {
+		span { COLOR: Red; FONT-WEIGHT: bold; }
+	}
+
+	#placementsuccessfulmessage { BACKGROUND-COLOR: Green; PADDING: 10px 15px; MARGIN-BOTTOM: 15px; COLOR: white; 
+		#messageheader { FONT-SIZE: 17px; FONT-SIZE: 15px; COLOR: White; }
+	}
+}

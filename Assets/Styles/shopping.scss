@@ -1,0 +1,254 @@
+#shopping {
+
+	/* Elements & Global Styles */
+	h2 { MARGIN: 0; color: #333; }
+    .divider { WIDTH: auto; HEIGHT: 1px; BACKGROUND-COLOR: #CCC; }
+
+	
+
+    /* Product List */
+    #productlist { width: 100%; border-top: 1px solid #CCC; border-bottom: 1px solid #CCC; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; 
+		table { width: 100%; }
+	
+
+		#productlistheader { position: relative; padding: 5px 10px; MIN-HEIGHT: 23px; BACKGROUND-COLOR: #EEE; BORDER-LEFT: 1px solid; border-right: 1px solid; BORDER-bottom: 1px solid; border-color: #CCC; border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; 
+			.searchresults { float: left; text-align: left; FONT-SIZE: 13px; FONT-WEIGHT: bold; line-height: 23px; 
+				.totalitemcount { FONT-SIZE: 17px; }
+			}
+			.sorttype { float: right; text-align: right; FONT-SIZE: 11px; line-height: 23px; 
+				select { FONT-SIZE: 11px; }
+			}
+		}
+
+		.pagerbar { position: relative; padding: 5px 10px; background-color: #F7F7F7; BORDER-LEFT: 1px solid; border-right: 1px solid; border-color: #CCC; }
+		.pagerbar.bottom { border-radius: 0 0 4px 4px; -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; }
+		.pagerbar {
+			.itemsxofy { position: absolute; LEFT: 10px; TEXT-ALIGN: left; FONT-SIZE: 11px; Line-height: 23px; }
+			.pager { text-align: center; FONT-SIZE: 11px; MIN-HEIGHT: 23px; 
+				a { display: inline-block; padding: 5px; COLOR: #666; FONT-SIZE: 11px; CURSOR: pointer; }
+				a:hover { color: black; }
+				.active { font-weight: bold; COLOR: #000; CURSOR: default; }
+				.previous { }
+				.next { }
+			}
+			.pagesize { position: absolute; RIGHT: 10px; TEXT-ALIGN: right; FONT-SIZE: 11px; Line-height: 23px; 
+				select { FONT-SIZE: 11px; }
+			}
+		}
+
+		#productlistitems { background-color: #FFF; 
+			.producttable { border-collapse: collapse; WIDTH: 100%; }
+			.productwrapper { text-align: center; padding: 10px; BORDER: 1px solid #CCC; VERTICAL-ALIGN: top; /* FOR SINGLE PRODUCT ROWS ADD --  text-align: left; */ 
+				.picture { height: 120px; text-align: center; MARGIN: 10px 0; /* FOR SINGLE PRODUCT ROWS ADD --  text-align:left; */ 
+					img { max-width: 120px; MAX-HEIGHT: 120px; /* FOR SINGLE PRODUCT ROWS ADD -- float:left; max-width: 90px; MAX-HEIGHT: 90px; */ }
+				}
+				.detailswrapper { min-height: 95px; /* FOR SINGLE PRODUCT ROWS ADD -- float:left;  margin-left:15px; */ }
+				.description { font-size: 13px; FONT-WEIGHT: bold; 
+					a { TEXT-DECORATION: none; COLOR: #000; }
+					a:hover { TEXT-DECORATION: underline; }
+				}
+				.itemcode { margin-bottom: 10px; FONT-SIZE: 11px; COLOR: #666; }
+				.price { FONT-SIZE: 13px; margin-top: 10px; FONT-WEIGHT: bold; margin-bottom: 5px; }
+				.volume { MARGIN-BOTTOM: 10px; FONT-SIZE: 10px; }
+				.productgroup { font-size: 11px; padding: 10px 0; BORDER-TOP: 1px dotted #CCC; MARGIN: 10px 0 0 0; WHITE-SPACE: nowrap; 
+					input[type=text] { font-size: 11px; WIDTH: 40px; }
+					select { FONT-SIZE: 11px; }
+				}
+				.addtocart { padding-top: 10px; MARGIN-TOP: 20px; /* FOR SINGLE PRODUCT ROWS ADD --  MARGIN: 20px 10px; float:right; border:0; */ 
+					a { cursor: pointer; }
+				}
+			}
+		}
+	}
+
+    /* Product Navigation */
+    .productnavigation { WIDTH: 180px; MAX-WIDTH: 180px; margin-right: 15px; BACKGROUND: #F7F7F7; BORDER: 1px solid #999999; 
+        .content { PADDING: 15px 5px; 
+            h4 { COLOR: black; BORDER: none; MARGIN: 0 0 5px 0; PADDING: 0; FONT-SIZE: 13px; }
+            a { FONT-SIZE: 11px; TEXT-DECORATION: underline; }
+            ul { MARGIN: 0 0 15px 5px; PADDING: 0; LIST-STYLE-TYPE: none; }
+            li { MARGIN: 0; PADDING: 2px 0; 
+                a:hover { TEXT-DECORATION: underline; }
+                a.active { FONT-WEIGHT: bold; }
+			}
+		}
+	}
+
+
+
+    /* Product Detail */
+    #itemcode { color: #666; }
+    #productdetails { BORDER-COLLAPSE: collapse; MARGIN-BOTTOM: 40px; 
+        td { VERTICAL-ALIGN: top; }
+	}
+    #picturewrapper { BORDER-RIGHT: 1px solid #CCC; PADDING: 20px; 
+        img { MAX-WIDTH: 250px; MAX-HEIGHT: 350px; }
+	}
+    #productoptionswrapper { WIDTH: 100%; PADDING: 20px; 
+        h2 { line-height: inherit; }
+	}
+    #shortdescription { PADDING: 15px 0; BORDER-BOTTOM: 1px solid #CCC; FONT-SIZE: 15px; FONT-STYLE: italic; FONT-FAMILY: Georgia, Times New Roman, Serif; COLOR: #666; }
+    #priceswrapper { FONT-SIZE: 13px; PADDING: 15px 0; BORDER-BOTTOM: 1px solid #CCC; 
+        td { TEXT-ALIGN: right; PADDING-RIGHT: 30px; }
+        .label { FONT-SIZE: 13px; }
+        .price { FONT-SIZE: 19px; FONT-WEIGHT: bold; }
+	}
+    #quantitywrapper { FONT-SIZE: 13px; PADDING: 15px 0; 
+        .field { 
+			input[type=text] { WIDTH: 70px; }
+			select { PADDING: 1px; }
+		}
+	}
+    #longdescription { }
+
+
+
+	/* Shopping Cart */
+    #cartheader { 
+        .back { float: left; }
+        .update { float: right; }
+	}
+    #cartcontents { width: 100%; border-collapse: collapse; border: 1px solid #999; MARGIN-TOP: 15px; 
+        th { text-align: center; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+        td { text-align: left; border-top: 1px dotted #999; padding: 5px; VERTICAL-ALIGN: top; }
+        .description { 
+            a { COLOR: #222; TEXT-DECORATION: none; }
+            a:hover { TEXT-DECORATION: underline; }
+            img { float: left; MARGIN-RIGHT: 10px; max-width: 60px; max-height: 60px; }
+            .producttitle { font-size: 13px; FONT-WEIGHT: bold; }
+            .itemcode { font-size: 10px; COLOR: #999; }
+		}
+        .priceeach { text-align: right; }
+        .bv { text-align: right; }
+        .cv { text-align: right; }
+        .quantity { text-align: center; 
+            input[type=text] { width: 50px; text-align: center; }
+		}
+        .total { text-align: right; border-right: 0; }
+        .options { border-left: 0; TEXT-ALIGN: center; 
+			a { CURSOR: pointer; }
+		}
+	}
+
+    .ordertotals { width: 250px; 
+        table { width: 100%; border-collapse: collapse; 
+            td { padding: 5px; }
+		}
+        .subtotal { }
+        .label { padding-right: 20px; font-weight: normal; }
+        .value { width: 100px; text-align: right; border: 1px solid #999; }
+        .grandtotal {
+			.label { text-transform: uppercase; font-weight: bold; }
+			.value { background-color: #EEE; font-weight: bold; }
+		}
+        .totalpaid {
+			.label { text-transform: uppercase; font-weight: bold; }
+			.value { background: #EEE; }
+		}
+        .totaldue {
+            .label { text-transform: uppercase; font-weight: bold; }
+            .value { background: #EEE; }
+		}
+        .checkout td { border: 0; }
+	}
+
+    #shoppingcartfooter { margin-top: 10px; 
+        table { WIDTH: 100%; }
+	}
+
+
+
+
+	/* Checkout */
+    #shoppingcheckout { 
+        h2 { margin-bottom: 15px; color: #333; }
+		input { margin-bottom: 0; }
+		.checkboxes { margin-left: 20px; 
+			label { font-size: inherit; }
+			input { float: left; margin-left: -20px; }
+		}
+        .fieldlabel { width: 150px; font-size: 13px; VERTICAL-ALIGN: top; PADDING-TOP: 8px; text-align: right; PADDING-RIGHT: 10px; WHITE-SPACE: nowrap; }
+        .fieldwrapper { float: left; MARGIN-RIGHT: 15px; }
+        .fieldwrapper.width120 { WIDTH: 120px; }
+        .fieldwrapper.width255 { WIDTH: 255px; }
+        .fieldwrapper {
+		    .fieldinstructions { font-size: 10px; COLOR: #666; PADDING-LEFT: 0; MARGIN-BOTTOM: 5px; WHITE-SPACE: nowrap; }
+            input[type=text], select { width: 100%; margin-right: 5px; PADDING: 4px; FONT-SIZE: 13px; }
+	    }
+        .navigation { PADDING: 30px 0 0 0; BORDER-TOP: 1px solid #EEE; MARGIN: 20px 0 0 0; 
+            .next { FLOAT: left; }
+            .back { FLOAT: right; }
+	    }
+        #paymentmethodsonfile { width: 100%; border-collapse: collapse; border: 1px solid #999; 
+            th { text-align: center; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+            td { text-align: left; border-top: 1px dotted #999; padding: 10px; VERTICAL-ALIGN: middle; }
+            .options { width: 200px; border-left: 0; TEXT-ALIGN: left;
+                a { CURSOR: pointer; }
+                input[type=radio] { float: left; MARGIN-RIGHT: 5px; }
+                label { CURSOR: pointer; }
+                img { MARGIN-RIGHT: 10px; }
+		    }
+            .description { 
+                img { float: left; MARGIN-RIGHT: 5px; }
+                .producttitle { font-size: 12px; COLOR: #666; 
+                    strong { font-size: 13px; COLOR: #333; }
+			    }
+		    }
+            .nameoncart { text-align: left; }
+            .expirationdate { text-align: left; }
+	    }
+
+        .newpaymentmethodwrapper { padding: 15px 0; BORDER-BOTTOM: 1px dotted #CCC; }
+        .newpaymentmethod { width: 100%; 
+            h3 { MARGIN-TOP: 0; }
+            td { VERTICAL-ALIGN: top; }
+            .allowablepaymentmethodicons { WIDTH: 100px; padding-RIGHT: 15px; }
+            .usenewpaymentmethodbuttonwrapper { FLOAT: right; margin-left: 15px; }
+	    }
+
+
+    /* Checkout Review */
+    .orderreview  { width: 75%; border-collapse: collapse; border: 1px solid #999; 
+        th  { text-align: left; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+        td  { text-align: left; border-top: 1px dotted #999; padding: 10px; VERTICAL-ALIGN: top; FONT-SIZE: 11px; }
+	    }
+
+    #cartcontents  { width: 75%; border-collapse: collapse; border: 1px solid #999; 
+        th  { text-align: center; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+        td  { text-align: left; border-top: 1px solid #999; padding: 5px; VERTICAL-ALIGN: top; }
+        .description  { 
+            a  { COLOR: #222; TEXT-DECORATION: none; }
+            a:hover  { TEXT-DECORATION: underline; }
+            img  { float: left; MARGIN-RIGHT: 10px; max-width: 50px; max-height: 50px; }
+            .producttitle  { font-size: 13px; FONT-WEIGHT: bold; }
+            .itemcode  { font-size: 10px; COLOR: #999; }
+		    }
+        .priceeach  { text-align: right; }
+        .bv  { text-align: right; }
+        .cv  { text-align: right; }
+        .quantity  { text-align: center; 
+            input[type=text]  { width: 50px; text-align: center; }
+		    }
+        .total  { text-align: right; }
+        .options  { TEXT-ALIGN: center; 
+            a  { CURSOR: pointer; }
+		    }
+	    }
+
+    #ordertotalsreviewwrapper  { float: right; width: 170px; border: 1px solid #999; background-color: #EEE; PADDING: 3px; TEXT-ALIGN: center; 
+        a.placeorderbutton  { MARGIN: 15px; }
+	    }
+    #ordertotalsreview  { border: 1px solid #CCC; BACKGROUND-COLOR: White; width: 100%; border-collapse: collapse;        
+        td  { padding: 5px; 
+            h3  { MARGIN: 0; }
+            .fieldlabel  { padding-right: 20px; text-align: left; }
+            .value  { width: 100px; text-align: right; }
+		    }
+        .subtotal  { }
+        .discount  { color: Red; }
+        .shipping td  { BORDER-TOP: 1px dotted #CCC; }
+        .grandTotal td  { BORDER-TOP: 1px solid #CCC; FONT-WEIGHT: bold; FONT-SIZE: 15px; TEXT-ALIGN: center; }
+        .placeOrder td  { border: 0; TEXT-ALIGN: center; }
+	    }
+    }
+}

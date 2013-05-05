@@ -1,0 +1,41 @@
+/* Profile */
+#profile #contentwrapper #pageheader {
+  POSITION: relative;
+  PADDING: 20px;
+  BORDER-BOTTOM: 1px solid #262626;
+  BACKGROUND-COLOR: #434343;
+  BACKGROUND-IMAGE: -moz-linear-gradient(top, #515151, #3f3f3f 100%);
+  BACKGROUND-IMAGE: -webkit-linear-gradient(top, #515151, #3f3f3f 100%);
+  BACKGROUND-IMAGE: -o-linear-gradient(top, #515151, #3f3f3f 100%);
+  BACKGROUND-IMAGE: -ms-linear-gradient(top, #515151, #3f3f3f 100%);
+  BACKGROUND-IMAGE: linear-gradient(top, #515151, #3f3f3f 100%); }
+  #profile #contentwrapper #pageheader h1 {
+    COLOR: White;
+    MARGIN: 0;
+    PADDING: 0; }
+  #profile #contentwrapper #pageheader h2 {
+    COLOR: white;
+    FONT-SIZE: 15px;
+    FONT-WEIGHT: bold;
+    MARGIN: 0;
+    PADDING: 0; }
+  #profile #contentwrapper #pageheader h3 {
+    COLOR: white;
+    FONT-SIZE: 18px;
+    FONT-WEIGHT: bold;
+    MARGIN: 0;
+    PADDING: 0;
+    TEXT-ALIGN: right;
+    POSITION: absolute;
+    TOP: 35px;
+    RIGHT: 20px; }
+#profile #content {
+  BACKGROUND-COLOR: #FFF;
+  padding: 20px; }
+#profile #customerdetailtabs {
+  height: 455px; }
+#profile .fieldlabel {
+  color: #999;
+  TEXT-ALIGN: right;
+  PADDING-RIGHT: 10px; }
+

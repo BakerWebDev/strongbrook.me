@@ -1,0 +1,88 @@
+﻿.customerdetails { line-height: 14px;
+	.avatar { float: left; max-width: 30px; max-height: 30px; margin-right: 10px; }
+	.name { display: block; font-weight: bold; }
+	.title { color: #999; font-size: 0.85em; }
+}
+
+.column-alignright { text-align: right !important; }
+
+
+.thumbnails { 
+	.thumbnail { background-color: #ffffff; 
+		.details { padding: 5px; }		
+		.avatar { margin-bottom: 5px; }
+		.contactinformation { margin-top: 10px; font-size: 0.85em; white-space: nowrap; }
+	}
+}
+
+
+.gridreporttablewrapper { 
+    a { cursor: pointer; }
+    a.sortable.asc:before { content: '▴ '; }
+    a.sortable.desc:before { content: '▾ '; }
+}
+
+
+.gridreporttable { 
+    .cell-checkbox { width: 30px; }
+    .cell-number { text-align: right; }
+
+    tr.table-headers { }
+    .text-primary { font-weight: bold; display: block; }
+    .text-secondary { font-size: 11px; color: #666; }
+    .image-avatar { display: block; float: left; margin-right: 5px; max-width: 35px; max-height: 35px; }
+    .image-avatar img { width: inherit; }
+    .align-center { text-align: center; }
+    .align-right { text-align: right; }
+}
+
+.preloaderwrapper { text-align: center; font-size: 17px; height: 48px; line-height: 48px; }
+.preloaderwrapper img { display: block; margin: 0 auto; }
+
+
+
+
+#organizationdetailreport {
+	h2 { color: #333; }
+    .popovercontent { line-height: 16px; 
+        .avatar { max-width: 75px; max-height: 75px; float: left; margin-right: 10px; }
+        .name { font-weight: bold; }
+        .rank { }
+        .id { }
+        .status { }
+    }
+
+    .infinitescrollwrapper { height: 500px; overflow-y: scroll; overflow-x: hidden; }
+
+    .details { position: relative; font-size: 15px; margin-bottom: 20px; 
+        .name { font-size: 17px; font-weight: bold; }
+        .rank { }
+        .id { }
+        .date { position: absolute; top: 0; right: 0; text-align: right; font-size: 10px; text-transform: uppercase; }
+    }
+
+    .fieldlabel { text-align: left; }
+    .fieldvalue { text-align: right !important; }
+
+    .filtercriteriawrapper input { width: 190px; }
+
+	.progress { margin-bottom: 5px; }
+	.progress-upperlabel { font-size: 13px; margin-bottom: 5px; }
+    .progress-upperlabel-large { font-size: 17px; }
+    .progressbarwrapper { margin-bottom: 20px; 
+	.progress-lowerlabel { font-size: 11px; color: #999; }
+        .progress-lowerlabel.pull-right { text-align: right; }
+    }
+
+	#customerwallwrapper {
+		
+	}
+
+
+    .chart { float: left; width: 75px; padding: 0 15px 20px 15px; 
+        .percentage { font-size: 12px; }
+	    .chartlabel { width: 90px; text-align: center; }
+    }
+
+    #downlinelistwrapper { HEIGHT: 500px; OVERFLOW-Y: scroll; OVERFLOW-X: hidden;  PADDING-TOP: 5px; }
+}

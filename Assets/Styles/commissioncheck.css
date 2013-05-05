@@ -1,0 +1,48 @@
+.commissioncheck {
+  position: relative;
+  width: 800px;
+  height: 372px;
+  color: black;
+  font-size: 11px;
+  font-family: Tahoma;
+  color: #333;
+  background: url(../Images/imgCommissionCheck.jpg) no-repeat top left; }
+  .commissioncheck .name {
+    position: absolute;
+    top: 135px;
+    left: 130px;
+    font-size: 24px;
+    font-family: Georgia, Times New Roman, Serif; }
+  .commissioncheck .date {
+    position: absolute;
+    top: 80px;
+    left: 580px;
+    font-size: 24px;
+    font-family: Georgia, Times New Roman, Serif;
+    text-align: right; }
+  .commissioncheck .amount {
+    position: absolute;
+    top: 135px;
+    left: 620px;
+    width: 130px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
+    color: green; }
+  .commissioncheck .amountstring {
+    position: absolute;
+    top: 185px;
+    left: 50px;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: Georgia, Times New Roman, Serif;
+    text-transform: uppercase; }
+    .commissioncheck .amountstring sup {
+      font-size: 13px; }
+  .commissioncheck .for {
+    position: absolute;
+    top: 260px;
+    left: 85px;
+    font-family: Georgia, Times New Roman, Serif;
+    font-size: 24px; }
+

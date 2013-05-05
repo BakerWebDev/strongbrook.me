@@ -1,0 +1,687 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="CodeFirstNamespace" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Calendar">
+        <Key>
+          <PropertyRef Name="CalendarID" />
+        </Key>
+        <Property Name="CalendarID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CalendarStatusID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="CalendarPrivacyTypeID" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="CalendarStatus" Relationship="CodeFirstNamespace.CalendarStatus_Calendars" FromRole="CalendarStatus_Calendars_Target" ToRole="CalendarStatus_Calendars_Source" />
+        <NavigationProperty Name="CalendarPrivacyType" Relationship="CodeFirstNamespace.CalendarPrivacyType_Calendars" FromRole="CalendarPrivacyType_Calendars_Target" ToRole="CalendarPrivacyType_Calendars_Source" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.Calendar_Customer" FromRole="Calendar_Customer_Source" ToRole="Calendar_Customer_Target" />
+        <NavigationProperty Name="CalendarItems" Relationship="CodeFirstNamespace.CalendarItem_Calendar" FromRole="CalendarItem_Calendar_Target" ToRole="CalendarItem_Calendar_Source" />
+      </EntityType>
+      <EntityType Name="CalendarStatus">
+        <Key>
+          <PropertyRef Name="CalendarStatusID" />
+        </Key>
+        <Property Name="CalendarStatusID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CalendarStatusDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Calendars" Relationship="CodeFirstNamespace.CalendarStatus_Calendars" FromRole="CalendarStatus_Calendars_Source" ToRole="CalendarStatus_Calendars_Target" />
+      </EntityType>
+      <EntityType Name="CalendarPrivacyType">
+        <Key>
+          <PropertyRef Name="CalendarPrivacyTypeID" />
+        </Key>
+        <Property Name="CalendarPrivacyTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CalendarPrivacyTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Calendars" Relationship="CodeFirstNamespace.CalendarPrivacyType_Calendars" FromRole="CalendarPrivacyType_Calendars_Source" ToRole="CalendarPrivacyType_Calendars_Target" />
+        <NavigationProperty Name="CalendarItems" Relationship="CodeFirstNamespace.CalendarItem_CalendarPrivacyType" FromRole="CalendarItem_CalendarPrivacyType_Target" ToRole="CalendarItem_CalendarPrivacyType_Source" />
+      </EntityType>
+      <EntityType Name="CalendarItem">
+        <Key>
+          <PropertyRef Name="CalendarItemID" />
+        </Key>
+        <Property Name="CalendarItemID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CalendarID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CalendarItemTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="CalendarItemStatusID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CalendarItemRepeatTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Location" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="AllDay" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="CalendarPrivacyTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="IsCorporate" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="TimeZoneOffset" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Calendar" Relationship="CodeFirstNamespace.CalendarItem_Calendar" FromRole="CalendarItem_Calendar_Source" ToRole="CalendarItem_Calendar_Target" />
+        <NavigationProperty Name="CalendarItemRepeatType" Relationship="CodeFirstNamespace.CalendarItemRepeatType_CalendarItems" FromRole="CalendarItemRepeatType_CalendarItems_Target" ToRole="CalendarItemRepeatType_CalendarItems_Source" />
+        <NavigationProperty Name="CalendarItemStatus" Relationship="CodeFirstNamespace.CalendarItemStatus_CalendarItems" FromRole="CalendarItemStatus_CalendarItems_Target" ToRole="CalendarItemStatus_CalendarItems_Source" />
+        <NavigationProperty Name="CalendarItemType" Relationship="CodeFirstNamespace.CalendarItemType_CalendarItems" FromRole="CalendarItemType_CalendarItems_Target" ToRole="CalendarItemType_CalendarItems_Source" />
+        <NavigationProperty Name="CalendarPrivacyType" Relationship="CodeFirstNamespace.CalendarItem_CalendarPrivacyType" FromRole="CalendarItem_CalendarPrivacyType_Source" ToRole="CalendarItem_CalendarPrivacyType_Target" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.CalendarItem_Customer" FromRole="CalendarItem_Customer_Source" ToRole="CalendarItem_Customer_Target" />
+      </EntityType>
+      <EntityType Name="CalendarItemRepeatType">
+        <Key>
+          <PropertyRef Name="CalendarItemRepeatTypeID" />
+        </Key>
+        <Property Name="CalendarItemRepeatTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CalendarItemRepeatTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="CalendarItems" Relationship="CodeFirstNamespace.CalendarItemRepeatType_CalendarItems" FromRole="CalendarItemRepeatType_CalendarItems_Source" ToRole="CalendarItemRepeatType_CalendarItems_Target" />
+      </EntityType>
+      <EntityType Name="CalendarItemStatus">
+        <Key>
+          <PropertyRef Name="CalendarItemStatusID" />
+        </Key>
+        <Property Name="CalendarItemStatusID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CalendarItemStatusDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="CalendarItems" Relationship="CodeFirstNamespace.CalendarItemStatus_CalendarItems" FromRole="CalendarItemStatus_CalendarItems_Source" ToRole="CalendarItemStatus_CalendarItems_Target" />
+      </EntityType>
+      <EntityType Name="CalendarItemType">
+        <Key>
+          <PropertyRef Name="CalendarItemTypeID" />
+        </Key>
+        <Property Name="CalendarItemTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CalendarItemTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="CalendarItems" Relationship="CodeFirstNamespace.CalendarItemType_CalendarItems" FromRole="CalendarItemType_CalendarItems_Source" ToRole="CalendarItemType_CalendarItems_Target" />
+      </EntityType>
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="CustomerID" />
+        </Key>
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="None" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="FirstName" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="LastName" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="EmailHostType">
+        <Key>
+          <PropertyRef Name="EmailHostTypeID" />
+        </Key>
+        <Property Name="EmailHostTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="EmailHostTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="EmailPreferences" Relationship="CodeFirstNamespace.EmailPreference_EmailHostType" FromRole="EmailPreference_EmailHostType_Target" ToRole="EmailPreference_EmailHostType_Source" />
+      </EntityType>
+      <EntityType Name="EmailPreference">
+        <Key>
+          <PropertyRef Name="EmailPreferenceID" />
+        </Key>
+        <Property Name="EmailPreferenceID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Username" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Password" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Server" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Port" Type="Edm.Int32" Nullable="true" />
+        <Property Name="UseSSL" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="EmailHostTypeID" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="EmailHostType" Relationship="CodeFirstNamespace.EmailPreference_EmailHostType" FromRole="EmailPreference_EmailHostType_Source" ToRole="EmailPreference_EmailHostType_Target" />
+      </EntityType>
+      <EntityType Name="ForumDiscussion">
+        <Key>
+          <PropertyRef Name="ForumDiscussionID" />
+        </Key>
+        <Property Name="ForumDiscussionID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="ForumDiscussionStatusTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ViewCount" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.ForumDiscussion_Customer" FromRole="ForumDiscussion_Customer_Source" ToRole="ForumDiscussion_Customer_Target" />
+        <NavigationProperty Name="ForumDiscussionStatusType" Relationship="CodeFirstNamespace.ForumDiscussionStatusType_ForumDiscussions" FromRole="ForumDiscussionStatusType_ForumDiscussions_Target" ToRole="ForumDiscussionStatusType_ForumDiscussions_Source" />
+        <NavigationProperty Name="ForumPosts" Relationship="CodeFirstNamespace.ForumPost_ForumDiscussion" FromRole="ForumPost_ForumDiscussion_Target" ToRole="ForumPost_ForumDiscussion_Source" />
+      </EntityType>
+      <EntityType Name="ForumDiscussionStatusType">
+        <Key>
+          <PropertyRef Name="ForumDiscussionStatusTypeID" />
+        </Key>
+        <Property Name="ForumDiscussionStatusTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ForumDiscussionStatusTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="ForumDiscussions" Relationship="CodeFirstNamespace.ForumDiscussionStatusType_ForumDiscussions" FromRole="ForumDiscussionStatusType_ForumDiscussions_Source" ToRole="ForumDiscussionStatusType_ForumDiscussions_Target" />
+      </EntityType>
+      <EntityType Name="ForumPost">
+        <Key>
+          <PropertyRef Name="ForumPostID" />
+        </Key>
+        <Property Name="ForumPostID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ForumDiscussionID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ForumPostStatusTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Body" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="ForumDiscussion" Relationship="CodeFirstNamespace.ForumPost_ForumDiscussion" FromRole="ForumPost_ForumDiscussion_Source" ToRole="ForumPost_ForumDiscussion_Target" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.ForumPost_Customer" FromRole="ForumPost_Customer_Source" ToRole="ForumPost_Customer_Target" />
+        <NavigationProperty Name="ForumPostStatusType" Relationship="CodeFirstNamespace.ForumPostStatusType_ForumPosts" FromRole="ForumPostStatusType_ForumPosts_Target" ToRole="ForumPostStatusType_ForumPosts_Source" />
+      </EntityType>
+      <EntityType Name="ForumPostStatusType">
+        <Key>
+          <PropertyRef Name="ForumPostStatusTypeID" />
+        </Key>
+        <Property Name="ForumPostStatusTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ForumPostStatusTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="ForumPosts" Relationship="CodeFirstNamespace.ForumPostStatusType_ForumPosts" FromRole="ForumPostStatusType_ForumPosts_Source" ToRole="ForumPostStatusType_ForumPosts_Target" />
+      </EntityType>
+      <EntityType Name="GettingStartedCompletedNode">
+        <Key>
+          <PropertyRef Name="GettingStartedCompletedNodeID" />
+        </Key>
+        <Property Name="GettingStartedCompletedNodeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="GettingStartedTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CompletedDate" Type="Edm.DateTime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="GettingStartedStatusType">
+        <Key>
+          <PropertyRef Name="GettingStartedStatusTypeID" />
+        </Key>
+        <Property Name="GettingStartedStatusTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="GettingStartedStatusTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="GettingStartedTypes" Relationship="CodeFirstNamespace.GettingStartedType_GettingStartedStatusType" FromRole="GettingStartedType_GettingStartedStatusType_Target" ToRole="GettingStartedType_GettingStartedStatusType_Source" />
+      </EntityType>
+      <EntityType Name="GettingStartedType">
+        <Key>
+          <PropertyRef Name="GettingStartedTypeID" />
+        </Key>
+        <Property Name="GettingStartedTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="WebDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="GettingStartedStatusTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Group" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Priority" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="GettingStartedStatusType" Relationship="CodeFirstNamespace.GettingStartedType_GettingStartedStatusType" FromRole="GettingStartedType_GettingStartedStatusType_Source" ToRole="GettingStartedType_GettingStartedStatusType_Target" />
+      </EntityType>
+      <EntityType Name="Goal">
+        <Key>
+          <PropertyRef Name="GoalID" />
+        </Key>
+        <Property Name="GoalID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="GoalTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="GoalReferenceID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Target" Type="Edm.Decimal" Nullable="true" Precision="18" Scale="2" />
+        <Property Name="Actual" Type="Edm.Decimal" Nullable="true" Precision="18" Scale="2" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="GoalStatusID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.Goal_Customer" FromRole="Goal_Customer_Source" ToRole="Goal_Customer_Target" />
+      </EntityType>
+      <EntityType Name="GoalStatus">
+        <Key>
+          <PropertyRef Name="GoalStatusID" />
+        </Key>
+        <Property Name="GoalStatusID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="GoalStatusDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="Message">
+        <Key>
+          <PropertyRef Name="MessageID" />
+        </Key>
+        <Property Name="MessageID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ToCustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="FromCustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Subject" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Body" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ReadDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="MessageStatusTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ConversationID" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="MessageStatusType">
+        <Key>
+          <PropertyRef Name="MessageStatusTypeID" />
+        </Key>
+        <Property Name="MessageStatusTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="MessageStatusTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="PersonalStatus">
+        <Key>
+          <PropertyRef Name="PersonalStatusID" />
+        </Key>
+        <Property Name="PersonalStatusID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Body" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="Customer" Relationship="CodeFirstNamespace.PersonalStatus_Customer" FromRole="PersonalStatus_Customer_Source" ToRole="PersonalStatus_Customer_Target" />
+      </EntityType>
+      <EntityType Name="Resource">
+        <Key>
+          <PropertyRef Name="ResourceID" />
+        </Key>
+        <Property Name="ResourceID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="ResourceCategoryID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ResourceStatusID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ResourceActionTypeID" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="ResourceActionType" Relationship="CodeFirstNamespace.ResourceActionType_Resources" FromRole="ResourceActionType_Resources_Target" ToRole="ResourceActionType_Resources_Source" />
+        <NavigationProperty Name="ResourceCategory" Relationship="CodeFirstNamespace.ResourceCategory_Resources" FromRole="ResourceCategory_Resources_Target" ToRole="ResourceCategory_Resources_Source" />
+        <NavigationProperty Name="ResourceStatus" Relationship="CodeFirstNamespace.ResourceStatus_Resources" FromRole="ResourceStatus_Resources_Target" ToRole="ResourceStatus_Resources_Source" />
+      </EntityType>
+      <EntityType Name="ResourceActionType">
+        <Key>
+          <PropertyRef Name="ResourceActionTypeID" />
+        </Key>
+        <Property Name="ResourceActionTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ResourceActionTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Resources" Relationship="CodeFirstNamespace.ResourceActionType_Resources" FromRole="ResourceActionType_Resources_Source" ToRole="ResourceActionType_Resources_Target" />
+      </EntityType>
+      <EntityType Name="ResourceCategory">
+        <Key>
+          <PropertyRef Name="ResourceCategoryID" />
+        </Key>
+        <Property Name="ResourceCategoryID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ResourceCategoryDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Resources" Relationship="CodeFirstNamespace.ResourceCategory_Resources" FromRole="ResourceCategory_Resources_Source" ToRole="ResourceCategory_Resources_Target" />
+      </EntityType>
+      <EntityType Name="ResourceStatus">
+        <Key>
+          <PropertyRef Name="ResourceStatusID" />
+        </Key>
+        <Property Name="ResourceStatusID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ResourceStatusDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <NavigationProperty Name="Resources" Relationship="CodeFirstNamespace.ResourceStatus_Resources" FromRole="ResourceStatus_Resources_Source" ToRole="ResourceStatus_Resources_Target" />
+      </EntityType>
+      <EntityType Name="SiteStatisticsRecord">
+        <Key>
+          <PropertyRef Name="SiteStatisticsRecordID" />
+        </Key>
+        <Property Name="SiteStatisticsRecordID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CustomerID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ViewCount" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EnrolledCount" Type="Edm.Int32" Nullable="true" />
+        <Property Name="LeadCount" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SiteStatusTypeID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SiteTypeID" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SiteStatusType">
+        <Key>
+          <PropertyRef Name="SiteStatusTypeID" />
+        </Key>
+        <Property Name="SiteStatusTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="SiteStatusTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="SiteType">
+        <Key>
+          <PropertyRef Name="SiteTypeID" />
+        </Key>
+        <Property Name="SiteTypeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="SiteTypeDescription" Type="Edm.String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <Association Name="CalendarStatus_Calendars">
+        <End Role="CalendarStatus_Calendars_Source" Type="CodeFirstNamespace.CalendarStatus" Multiplicity="0..1" />
+        <End Role="CalendarStatus_Calendars_Target" Type="CodeFirstNamespace.Calendar" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarStatus_Calendars_Source">
+            <PropertyRef Name="CalendarStatusID" />
+          </Principal>
+          <Dependent Role="CalendarStatus_Calendars_Target">
+            <PropertyRef Name="CalendarStatusID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarPrivacyType_Calendars">
+        <End Role="CalendarPrivacyType_Calendars_Source" Type="CodeFirstNamespace.CalendarPrivacyType" Multiplicity="0..1" />
+        <End Role="CalendarPrivacyType_Calendars_Target" Type="CodeFirstNamespace.Calendar" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarPrivacyType_Calendars_Source">
+            <PropertyRef Name="CalendarPrivacyTypeID" />
+          </Principal>
+          <Dependent Role="CalendarPrivacyType_Calendars_Target">
+            <PropertyRef Name="CalendarPrivacyTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItem_Calendar">
+        <End Role="CalendarItem_Calendar_Source" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <End Role="CalendarItem_Calendar_Target" Type="CodeFirstNamespace.Calendar" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItem_Calendar_Target">
+            <PropertyRef Name="CalendarID" />
+          </Principal>
+          <Dependent Role="CalendarItem_Calendar_Source">
+            <PropertyRef Name="CalendarID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItemRepeatType_CalendarItems">
+        <End Role="CalendarItemRepeatType_CalendarItems_Source" Type="CodeFirstNamespace.CalendarItemRepeatType" Multiplicity="0..1" />
+        <End Role="CalendarItemRepeatType_CalendarItems_Target" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItemRepeatType_CalendarItems_Source">
+            <PropertyRef Name="CalendarItemRepeatTypeID" />
+          </Principal>
+          <Dependent Role="CalendarItemRepeatType_CalendarItems_Target">
+            <PropertyRef Name="CalendarItemRepeatTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItemStatus_CalendarItems">
+        <End Role="CalendarItemStatus_CalendarItems_Source" Type="CodeFirstNamespace.CalendarItemStatus" Multiplicity="0..1" />
+        <End Role="CalendarItemStatus_CalendarItems_Target" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItemStatus_CalendarItems_Source">
+            <PropertyRef Name="CalendarItemStatusID" />
+          </Principal>
+          <Dependent Role="CalendarItemStatus_CalendarItems_Target">
+            <PropertyRef Name="CalendarItemStatusID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItemType_CalendarItems">
+        <End Role="CalendarItemType_CalendarItems_Source" Type="CodeFirstNamespace.CalendarItemType" Multiplicity="0..1" />
+        <End Role="CalendarItemType_CalendarItems_Target" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItemType_CalendarItems_Source">
+            <PropertyRef Name="CalendarItemTypeID" />
+          </Principal>
+          <Dependent Role="CalendarItemType_CalendarItems_Target">
+            <PropertyRef Name="CalendarItemTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItem_CalendarPrivacyType">
+        <End Role="CalendarItem_CalendarPrivacyType_Source" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <End Role="CalendarItem_CalendarPrivacyType_Target" Type="CodeFirstNamespace.CalendarPrivacyType" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItem_CalendarPrivacyType_Target">
+            <PropertyRef Name="CalendarPrivacyTypeID" />
+          </Principal>
+          <Dependent Role="CalendarItem_CalendarPrivacyType_Source">
+            <PropertyRef Name="CalendarPrivacyTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="CalendarItem_Customer">
+        <End Role="CalendarItem_Customer_Source" Type="CodeFirstNamespace.CalendarItem" Multiplicity="*" />
+        <End Role="CalendarItem_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="CalendarItem_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="CalendarItem_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Calendar_Customer">
+        <End Role="Calendar_Customer_Source" Type="CodeFirstNamespace.Calendar" Multiplicity="*" />
+        <End Role="Calendar_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="Calendar_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="Calendar_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="EmailPreference_EmailHostType">
+        <End Role="EmailPreference_EmailHostType_Source" Type="CodeFirstNamespace.EmailPreference" Multiplicity="*" />
+        <End Role="EmailPreference_EmailHostType_Target" Type="CodeFirstNamespace.EmailHostType" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="EmailPreference_EmailHostType_Target">
+            <PropertyRef Name="EmailHostTypeID" />
+          </Principal>
+          <Dependent Role="EmailPreference_EmailHostType_Source">
+            <PropertyRef Name="EmailHostTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ForumDiscussion_Customer">
+        <End Role="ForumDiscussion_Customer_Source" Type="CodeFirstNamespace.ForumDiscussion" Multiplicity="*" />
+        <End Role="ForumDiscussion_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="ForumDiscussion_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="ForumDiscussion_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ForumDiscussionStatusType_ForumDiscussions">
+        <End Role="ForumDiscussionStatusType_ForumDiscussions_Source" Type="CodeFirstNamespace.ForumDiscussionStatusType" Multiplicity="0..1" />
+        <End Role="ForumDiscussionStatusType_ForumDiscussions_Target" Type="CodeFirstNamespace.ForumDiscussion" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ForumDiscussionStatusType_ForumDiscussions_Source">
+            <PropertyRef Name="ForumDiscussionStatusTypeID" />
+          </Principal>
+          <Dependent Role="ForumDiscussionStatusType_ForumDiscussions_Target">
+            <PropertyRef Name="ForumDiscussionStatusTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ForumPost_ForumDiscussion">
+        <End Role="ForumPost_ForumDiscussion_Source" Type="CodeFirstNamespace.ForumPost" Multiplicity="*" />
+        <End Role="ForumPost_ForumDiscussion_Target" Type="CodeFirstNamespace.ForumDiscussion" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="ForumPost_ForumDiscussion_Target">
+            <PropertyRef Name="ForumDiscussionID" />
+          </Principal>
+          <Dependent Role="ForumPost_ForumDiscussion_Source">
+            <PropertyRef Name="ForumDiscussionID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ForumPost_Customer">
+        <End Role="ForumPost_Customer_Source" Type="CodeFirstNamespace.ForumPost" Multiplicity="*" />
+        <End Role="ForumPost_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="ForumPost_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="ForumPost_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ForumPostStatusType_ForumPosts">
+        <End Role="ForumPostStatusType_ForumPosts_Source" Type="CodeFirstNamespace.ForumPostStatusType" Multiplicity="0..1" />
+        <End Role="ForumPostStatusType_ForumPosts_Target" Type="CodeFirstNamespace.ForumPost" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ForumPostStatusType_ForumPosts_Source">
+            <PropertyRef Name="ForumPostStatusTypeID" />
+          </Principal>
+          <Dependent Role="ForumPostStatusType_ForumPosts_Target">
+            <PropertyRef Name="ForumPostStatusTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="GettingStartedType_GettingStartedStatusType">
+        <End Role="GettingStartedType_GettingStartedStatusType_Source" Type="CodeFirstNamespace.GettingStartedType" Multiplicity="*" />
+        <End Role="GettingStartedType_GettingStartedStatusType_Target" Type="CodeFirstNamespace.GettingStartedStatusType" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="GettingStartedType_GettingStartedStatusType_Target">
+            <PropertyRef Name="GettingStartedStatusTypeID" />
+          </Principal>
+          <Dependent Role="GettingStartedType_GettingStartedStatusType_Source">
+            <PropertyRef Name="GettingStartedStatusTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Goal_Customer">
+        <End Role="Goal_Customer_Source" Type="CodeFirstNamespace.Goal" Multiplicity="*" />
+        <End Role="Goal_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="Goal_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="Goal_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="PersonalStatus_Customer">
+        <End Role="PersonalStatus_Customer_Source" Type="CodeFirstNamespace.PersonalStatus" Multiplicity="*" />
+        <End Role="PersonalStatus_Customer_Target" Type="CodeFirstNamespace.Customer" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="PersonalStatus_Customer_Target">
+            <PropertyRef Name="CustomerID" />
+          </Principal>
+          <Dependent Role="PersonalStatus_Customer_Source">
+            <PropertyRef Name="CustomerID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ResourceActionType_Resources">
+        <End Role="ResourceActionType_Resources_Source" Type="CodeFirstNamespace.ResourceActionType" Multiplicity="0..1" />
+        <End Role="ResourceActionType_Resources_Target" Type="CodeFirstNamespace.Resource" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ResourceActionType_Resources_Source">
+            <PropertyRef Name="ResourceActionTypeID" />
+          </Principal>
+          <Dependent Role="ResourceActionType_Resources_Target">
+            <PropertyRef Name="ResourceActionTypeID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ResourceCategory_Resources">
+        <End Role="ResourceCategory_Resources_Source" Type="CodeFirstNamespace.ResourceCategory" Multiplicity="0..1" />
+        <End Role="ResourceCategory_Resources_Target" Type="CodeFirstNamespace.Resource" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ResourceCategory_Resources_Source">
+            <PropertyRef Name="ResourceCategoryID" />
+          </Principal>
+          <Dependent Role="ResourceCategory_Resources_Target">
+            <PropertyRef Name="ResourceCategoryID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ResourceStatus_Resources">
+        <End Role="ResourceStatus_Resources_Source" Type="CodeFirstNamespace.ResourceStatus" Multiplicity="0..1" />
+        <End Role="ResourceStatus_Resources_Target" Type="CodeFirstNamespace.Resource" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ResourceStatus_Resources_Source">
+            <PropertyRef Name="ResourceStatusID" />
+          </Principal>
+          <Dependent Role="ResourceStatus_Resources_Target">
+            <PropertyRef Name="ResourceStatusID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+    </Schema>
+    <Schema Namespace="System.Data.Objects" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="extendeddatacontext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Calendars" EntityType="CodeFirstNamespace.Calendar" />
+        <EntitySet Name="CalendarStatuses" EntityType="CodeFirstNamespace.CalendarStatus" />
+        <EntitySet Name="CalendarPrivacyTypes" EntityType="CodeFirstNamespace.CalendarPrivacyType" />
+        <EntitySet Name="CalendarItems" EntityType="CodeFirstNamespace.CalendarItem" />
+        <EntitySet Name="CalendarItemRepeatTypes" EntityType="CodeFirstNamespace.CalendarItemRepeatType" />
+        <EntitySet Name="CalendarItemStatuses" EntityType="CodeFirstNamespace.CalendarItemStatus" />
+        <EntitySet Name="CalendarItemTypes" EntityType="CodeFirstNamespace.CalendarItemType" />
+        <EntitySet Name="ExigoCustomers" EntityType="CodeFirstNamespace.Customer" />
+        <EntitySet Name="EmailHostTypes" EntityType="CodeFirstNamespace.EmailHostType" />
+        <EntitySet Name="EmailPreferences" EntityType="CodeFirstNamespace.EmailPreference" />
+        <EntitySet Name="ForumDiscussions" EntityType="CodeFirstNamespace.ForumDiscussion" />
+        <EntitySet Name="ForumDiscussionStatusTypes" EntityType="CodeFirstNamespace.ForumDiscussionStatusType" />
+        <EntitySet Name="ForumPosts" EntityType="CodeFirstNamespace.ForumPost" />
+        <EntitySet Name="ForumPostStatusTypes" EntityType="CodeFirstNamespace.ForumPostStatusType" />
+        <EntitySet Name="GettingStartedCompletedNodes" EntityType="CodeFirstNamespace.GettingStartedCompletedNode" />
+        <EntitySet Name="GettingStartedStatusTypes" EntityType="CodeFirstNamespace.GettingStartedStatusType" />
+        <EntitySet Name="GettingStartedTypes" EntityType="CodeFirstNamespace.GettingStartedType" />
+        <EntitySet Name="Goals" EntityType="CodeFirstNamespace.Goal" />
+        <EntitySet Name="GoalStatuses" EntityType="CodeFirstNamespace.GoalStatus" />
+        <EntitySet Name="Messages" EntityType="CodeFirstNamespace.Message" />
+        <EntitySet Name="MessageStatusTypes" EntityType="CodeFirstNamespace.MessageStatusType" />
+        <EntitySet Name="PersonalStatuses" EntityType="CodeFirstNamespace.PersonalStatus" />
+        <EntitySet Name="Resources" EntityType="CodeFirstNamespace.Resource" />
+        <EntitySet Name="ResourceActionTypes" EntityType="CodeFirstNamespace.ResourceActionType" />
+        <EntitySet Name="ResourceCategories" EntityType="CodeFirstNamespace.ResourceCategory" />
+        <EntitySet Name="ResourceStatuses" EntityType="CodeFirstNamespace.ResourceStatus" />
+        <EntitySet Name="SiteStatisticsRecords" EntityType="CodeFirstNamespace.SiteStatisticsRecord" />
+        <EntitySet Name="SiteStatusTypes" EntityType="CodeFirstNamespace.SiteStatusType" />
+        <EntitySet Name="SiteTypes" EntityType="CodeFirstNamespace.SiteType" />
+        <AssociationSet Name="CalendarStatus_Calendars" Association="CodeFirstNamespace.CalendarStatus_Calendars">
+          <End Role="CalendarStatus_Calendars_Source" EntitySet="CalendarStatuses" />
+          <End Role="CalendarStatus_Calendars_Target" EntitySet="Calendars" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarPrivacyType_Calendars" Association="CodeFirstNamespace.CalendarPrivacyType_Calendars">
+          <End Role="CalendarPrivacyType_Calendars_Source" EntitySet="CalendarPrivacyTypes" />
+          <End Role="CalendarPrivacyType_Calendars_Target" EntitySet="Calendars" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItem_Calendar" Association="CodeFirstNamespace.CalendarItem_Calendar">
+          <End Role="CalendarItem_Calendar_Source" EntitySet="CalendarItems" />
+          <End Role="CalendarItem_Calendar_Target" EntitySet="Calendars" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItemRepeatType_CalendarItems" Association="CodeFirstNamespace.CalendarItemRepeatType_CalendarItems">
+          <End Role="CalendarItemRepeatType_CalendarItems_Source" EntitySet="CalendarItemRepeatTypes" />
+          <End Role="CalendarItemRepeatType_CalendarItems_Target" EntitySet="CalendarItems" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItemStatus_CalendarItems" Association="CodeFirstNamespace.CalendarItemStatus_CalendarItems">
+          <End Role="CalendarItemStatus_CalendarItems_Source" EntitySet="CalendarItemStatuses" />
+          <End Role="CalendarItemStatus_CalendarItems_Target" EntitySet="CalendarItems" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItemType_CalendarItems" Association="CodeFirstNamespace.CalendarItemType_CalendarItems">
+          <End Role="CalendarItemType_CalendarItems_Source" EntitySet="CalendarItemTypes" />
+          <End Role="CalendarItemType_CalendarItems_Target" EntitySet="CalendarItems" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItem_CalendarPrivacyType" Association="CodeFirstNamespace.CalendarItem_CalendarPrivacyType">
+          <End Role="CalendarItem_CalendarPrivacyType_Source" EntitySet="CalendarItems" />
+          <End Role="CalendarItem_CalendarPrivacyType_Target" EntitySet="CalendarPrivacyTypes" />
+        </AssociationSet>
+        <AssociationSet Name="CalendarItem_Customer" Association="CodeFirstNamespace.CalendarItem_Customer">
+          <End Role="CalendarItem_Customer_Source" EntitySet="CalendarItems" />
+          <End Role="CalendarItem_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="Calendar_Customer" Association="CodeFirstNamespace.Calendar_Customer">
+          <End Role="Calendar_Customer_Source" EntitySet="Calendars" />
+          <End Role="Calendar_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="EmailPreference_EmailHostType" Association="CodeFirstNamespace.EmailPreference_EmailHostType">
+          <End Role="EmailPreference_EmailHostType_Source" EntitySet="EmailPreferences" />
+          <End Role="EmailPreference_EmailHostType_Target" EntitySet="EmailHostTypes" />
+        </AssociationSet>
+        <AssociationSet Name="ForumDiscussion_Customer" Association="CodeFirstNamespace.ForumDiscussion_Customer">
+          <End Role="ForumDiscussion_Customer_Source" EntitySet="ForumDiscussions" />
+          <End Role="ForumDiscussion_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="ForumDiscussionStatusType_ForumDiscussions" Association="CodeFirstNamespace.ForumDiscussionStatusType_ForumDiscussions">
+          <End Role="ForumDiscussionStatusType_ForumDiscussions_Source" EntitySet="ForumDiscussionStatusTypes" />
+          <End Role="ForumDiscussionStatusType_ForumDiscussions_Target" EntitySet="ForumDiscussions" />
+        </AssociationSet>
+        <AssociationSet Name="ForumPost_ForumDiscussion" Association="CodeFirstNamespace.ForumPost_ForumDiscussion">
+          <End Role="ForumPost_ForumDiscussion_Source" EntitySet="ForumPosts" />
+          <End Role="ForumPost_ForumDiscussion_Target" EntitySet="ForumDiscussions" />
+        </AssociationSet>
+        <AssociationSet Name="ForumPost_Customer" Association="CodeFirstNamespace.ForumPost_Customer">
+          <End Role="ForumPost_Customer_Source" EntitySet="ForumPosts" />
+          <End Role="ForumPost_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="ForumPostStatusType_ForumPosts" Association="CodeFirstNamespace.ForumPostStatusType_ForumPosts">
+          <End Role="ForumPostStatusType_ForumPosts_Source" EntitySet="ForumPostStatusTypes" />
+          <End Role="ForumPostStatusType_ForumPosts_Target" EntitySet="ForumPosts" />
+        </AssociationSet>
+        <AssociationSet Name="GettingStartedType_GettingStartedStatusType" Association="CodeFirstNamespace.GettingStartedType_GettingStartedStatusType">
+          <End Role="GettingStartedType_GettingStartedStatusType_Source" EntitySet="GettingStartedTypes" />
+          <End Role="GettingStartedType_GettingStartedStatusType_Target" EntitySet="GettingStartedStatusTypes" />
+        </AssociationSet>
+        <AssociationSet Name="Goal_Customer" Association="CodeFirstNamespace.Goal_Customer">
+          <End Role="Goal_Customer_Source" EntitySet="Goals" />
+          <End Role="Goal_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="PersonalStatus_Customer" Association="CodeFirstNamespace.PersonalStatus_Customer">
+          <End Role="PersonalStatus_Customer_Source" EntitySet="PersonalStatuses" />
+          <End Role="PersonalStatus_Customer_Target" EntitySet="ExigoCustomers" />
+        </AssociationSet>
+        <AssociationSet Name="ResourceActionType_Resources" Association="CodeFirstNamespace.ResourceActionType_Resources">
+          <End Role="ResourceActionType_Resources_Source" EntitySet="ResourceActionTypes" />
+          <End Role="ResourceActionType_Resources_Target" EntitySet="Resources" />
+        </AssociationSet>
+        <AssociationSet Name="ResourceCategory_Resources" Association="CodeFirstNamespace.ResourceCategory_Resources">
+          <End Role="ResourceCategory_Resources_Source" EntitySet="ResourceCategories" />
+          <End Role="ResourceCategory_Resources_Target" EntitySet="Resources" />
+        </AssociationSet>
+        <AssociationSet Name="ResourceStatus_Resources" Association="CodeFirstNamespace.ResourceStatus_Resources">
+          <End Role="ResourceStatus_Resources_Source" EntitySet="ResourceStatuses" />
+          <End Role="ResourceStatus_Resources_Target" EntitySet="Resources" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

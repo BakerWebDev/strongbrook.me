@@ -1,0 +1,69 @@
+﻿* { OUTLINE: 0; }
+
+
+body {
+    position:static; 
+    margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-repeat: repeat-y;
+	background-position: center; 
+    background-color: #2c3135;
+    background-image:url(../Images/Content/bkg-tile.jpg);
+}
+
+
+
+
+
+
+#header-wrapper {
+	height: 123px;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-image:url(../Images/Header/header-bkg.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	overflow: hidden;
+	z-index: 50;
+}
+
+#header-container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 123px;
+	z-index: 55;	
+}
+
+#header-member-info {
+	color: #333333;
+	float: right;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: 20px;
+	position: absolute;
+	text-align: right;
+	top: 60px;
+	width: 950px;
+}
+
+#header-member-info a {
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:12px;
+	color: #FFF;
+	padding: 4px 15px 4px 15px;
+	background-color: #ed9e09;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+	text-decoration: none;
+	margin-left: 8px;
+}
+#header-member-info a:hover {
+	background-color: #4089bf;
+}
+

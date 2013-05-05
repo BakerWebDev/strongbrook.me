@@ -1,0 +1,515 @@
+#shopping {
+  /* Elements & Global Styles */
+  /* Product List */
+  /* Product Navigation */
+  /* Product Detail */
+  /* Shopping Cart */
+  /* Checkout */ }
+  #shopping h2 {
+    MARGIN: 0;
+    color: #333; }
+  #shopping .divider {
+    WIDTH: auto;
+    HEIGHT: 1px;
+    BACKGROUND-COLOR: #CCC; }
+  #shopping #productlist {
+    width: 100%;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px; }
+    #shopping #productlist table {
+      width: 100%; }
+    #shopping #productlist #productlistheader {
+      position: relative;
+      padding: 5px 10px;
+      MIN-HEIGHT: 23px;
+      BACKGROUND-COLOR: #EEE;
+      BORDER-LEFT: 1px solid;
+      border-right: 1px solid;
+      BORDER-bottom: 1px solid;
+      border-color: #CCC;
+      border-radius: 4px 4px 0 0;
+      -moz-border-radius: 4px 4px 0 0;
+      -webkit-border-radius: 4px 4px 0 0; }
+      #shopping #productlist #productlistheader .searchresults {
+        float: left;
+        text-align: left;
+        FONT-SIZE: 13px;
+        FONT-WEIGHT: bold;
+        line-height: 23px; }
+        #shopping #productlist #productlistheader .searchresults .totalitemcount {
+          FONT-SIZE: 17px; }
+      #shopping #productlist #productlistheader .sorttype {
+        float: right;
+        text-align: right;
+        FONT-SIZE: 11px;
+        line-height: 23px; }
+        #shopping #productlist #productlistheader .sorttype select {
+          FONT-SIZE: 11px; }
+    #shopping #productlist .pagerbar {
+      position: relative;
+      padding: 5px 10px;
+      background-color: #F7F7F7;
+      BORDER-LEFT: 1px solid;
+      border-right: 1px solid;
+      border-color: #CCC; }
+    #shopping #productlist .pagerbar.bottom {
+      border-radius: 0 0 4px 4px;
+      -moz-border-radius: 0 0 4px 4px;
+      -webkit-border-radius: 0 0 4px 4px; }
+    #shopping #productlist .pagerbar .itemsxofy {
+      position: absolute;
+      LEFT: 10px;
+      TEXT-ALIGN: left;
+      FONT-SIZE: 11px;
+      Line-height: 23px; }
+    #shopping #productlist .pagerbar .pager {
+      text-align: center;
+      FONT-SIZE: 11px;
+      MIN-HEIGHT: 23px; }
+      #shopping #productlist .pagerbar .pager a {
+        display: inline-block;
+        padding: 5px;
+        COLOR: #666;
+        FONT-SIZE: 11px;
+        CURSOR: pointer; }
+      #shopping #productlist .pagerbar .pager a:hover {
+        color: black; }
+      #shopping #productlist .pagerbar .pager .active {
+        font-weight: bold;
+        COLOR: #000;
+        CURSOR: default; }
+    #shopping #productlist .pagerbar .pagesize {
+      position: absolute;
+      RIGHT: 10px;
+      TEXT-ALIGN: right;
+      FONT-SIZE: 11px;
+      Line-height: 23px; }
+      #shopping #productlist .pagerbar .pagesize select {
+        FONT-SIZE: 11px; }
+    #shopping #productlist #productlistitems {
+      background-color: #FFF; }
+      #shopping #productlist #productlistitems .producttable {
+        border-collapse: collapse;
+        WIDTH: 100%; }
+      #shopping #productlist #productlistitems .productwrapper {
+        text-align: center;
+        padding: 10px;
+        BORDER: 1px solid #CCC;
+        VERTICAL-ALIGN: top;
+        /* FOR SINGLE PRODUCT ROWS ADD --  text-align: left; */ }
+        #shopping #productlist #productlistitems .productwrapper .picture {
+          height: 120px;
+          text-align: center;
+          MARGIN: 10px 0;
+          /* FOR SINGLE PRODUCT ROWS ADD --  text-align:left; */ }
+          #shopping #productlist #productlistitems .productwrapper .picture img {
+            max-width: 120px;
+            MAX-HEIGHT: 120px;
+            /* FOR SINGLE PRODUCT ROWS ADD -- float:left; max-width: 90px; MAX-HEIGHT: 90px; */ }
+        #shopping #productlist #productlistitems .productwrapper .detailswrapper {
+          min-height: 95px;
+          /* FOR SINGLE PRODUCT ROWS ADD -- float:left;  margin-left:15px; */ }
+        #shopping #productlist #productlistitems .productwrapper .description {
+          font-size: 13px;
+          FONT-WEIGHT: bold; }
+          #shopping #productlist #productlistitems .productwrapper .description a {
+            TEXT-DECORATION: none;
+            COLOR: #000; }
+          #shopping #productlist #productlistitems .productwrapper .description a:hover {
+            TEXT-DECORATION: underline; }
+        #shopping #productlist #productlistitems .productwrapper .itemcode {
+          margin-bottom: 10px;
+          FONT-SIZE: 11px;
+          COLOR: #666; }
+        #shopping #productlist #productlistitems .productwrapper .price {
+          FONT-SIZE: 13px;
+          margin-top: 10px;
+          FONT-WEIGHT: bold;
+          margin-bottom: 5px; }
+        #shopping #productlist #productlistitems .productwrapper .volume {
+          MARGIN-BOTTOM: 10px;
+          FONT-SIZE: 10px; }
+        #shopping #productlist #productlistitems .productwrapper .productgroup {
+          font-size: 11px;
+          padding: 10px 0;
+          BORDER-TOP: 1px dotted #CCC;
+          MARGIN: 10px 0 0 0;
+          WHITE-SPACE: nowrap; }
+          #shopping #productlist #productlistitems .productwrapper .productgroup input[type=text] {
+            font-size: 11px;
+            WIDTH: 40px; }
+          #shopping #productlist #productlistitems .productwrapper .productgroup select {
+            FONT-SIZE: 11px; }
+        #shopping #productlist #productlistitems .productwrapper .addtocart {
+          padding-top: 10px;
+          MARGIN-TOP: 20px;
+          /* FOR SINGLE PRODUCT ROWS ADD --  MARGIN: 20px 10px; float:right; border:0; */ }
+          #shopping #productlist #productlistitems .productwrapper .addtocart a {
+            cursor: pointer; }
+  #shopping .productnavigation {
+    WIDTH: 180px;
+    MAX-WIDTH: 180px;
+    margin-right: 15px;
+    BACKGROUND: #F7F7F7;
+    BORDER: 1px solid #999999; }
+    #shopping .productnavigation .content {
+      PADDING: 15px 5px; }
+      #shopping .productnavigation .content h4 {
+        COLOR: black;
+        BORDER: none;
+        MARGIN: 0 0 5px 0;
+        PADDING: 0;
+        FONT-SIZE: 13px; }
+      #shopping .productnavigation .content a {
+        FONT-SIZE: 11px;
+        TEXT-DECORATION: underline; }
+      #shopping .productnavigation .content ul {
+        MARGIN: 0 0 15px 5px;
+        PADDING: 0;
+        LIST-STYLE-TYPE: none; }
+      #shopping .productnavigation .content li {
+        MARGIN: 0;
+        PADDING: 2px 0; }
+        #shopping .productnavigation .content li a:hover {
+          TEXT-DECORATION: underline; }
+        #shopping .productnavigation .content li a.active {
+          FONT-WEIGHT: bold; }
+  #shopping #itemcode {
+    color: #666; }
+  #shopping #productdetails {
+    BORDER-COLLAPSE: collapse;
+    MARGIN-BOTTOM: 40px; }
+    #shopping #productdetails td {
+      VERTICAL-ALIGN: top; }
+  #shopping #picturewrapper {
+    BORDER-RIGHT: 1px solid #CCC;
+    PADDING: 20px; }
+    #shopping #picturewrapper img {
+      MAX-WIDTH: 250px;
+      MAX-HEIGHT: 350px; }
+  #shopping #productoptionswrapper {
+    WIDTH: 100%;
+    PADDING: 20px; }
+    #shopping #productoptionswrapper h2 {
+      line-height: inherit; }
+  #shopping #shortdescription {
+    PADDING: 15px 0;
+    BORDER-BOTTOM: 1px solid #CCC;
+    FONT-SIZE: 15px;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Georgia, Times New Roman, Serif;
+    COLOR: #666; }
+  #shopping #priceswrapper {
+    FONT-SIZE: 13px;
+    PADDING: 15px 0;
+    BORDER-BOTTOM: 1px solid #CCC; }
+    #shopping #priceswrapper td {
+      TEXT-ALIGN: right;
+      PADDING-RIGHT: 30px; }
+    #shopping #priceswrapper .label {
+      FONT-SIZE: 13px; }
+    #shopping #priceswrapper .price {
+      FONT-SIZE: 19px;
+      FONT-WEIGHT: bold; }
+  #shopping #quantitywrapper {
+    FONT-SIZE: 13px;
+    PADDING: 15px 0; }
+    #shopping #quantitywrapper .field input[type=text] {
+      WIDTH: 70px; }
+    #shopping #quantitywrapper .field select {
+      PADDING: 1px; }
+  #shopping #cartheader .back {
+    float: left; }
+  #shopping #cartheader .update {
+    float: right; }
+  #shopping #cartcontents {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #999;
+    MARGIN-TOP: 15px; }
+    #shopping #cartcontents th {
+      text-align: center;
+      border: 1px solid #999;
+      background-color: #EEE;
+      padding: 5px; }
+    #shopping #cartcontents td {
+      text-align: left;
+      border-top: 1px dotted #999;
+      padding: 5px;
+      VERTICAL-ALIGN: top; }
+    #shopping #cartcontents .description a {
+      COLOR: #222;
+      TEXT-DECORATION: none; }
+    #shopping #cartcontents .description a:hover {
+      TEXT-DECORATION: underline; }
+    #shopping #cartcontents .description img {
+      float: left;
+      MARGIN-RIGHT: 10px;
+      max-width: 60px;
+      max-height: 60px; }
+    #shopping #cartcontents .description .producttitle {
+      font-size: 13px;
+      FONT-WEIGHT: bold; }
+    #shopping #cartcontents .description .itemcode {
+      font-size: 10px;
+      COLOR: #999; }
+    #shopping #cartcontents .priceeach {
+      text-align: right; }
+    #shopping #cartcontents .bv {
+      text-align: right; }
+    #shopping #cartcontents .cv {
+      text-align: right; }
+    #shopping #cartcontents .quantity {
+      text-align: center; }
+      #shopping #cartcontents .quantity input[type=text] {
+        width: 50px;
+        text-align: center; }
+    #shopping #cartcontents .total {
+      text-align: right;
+      border-right: 0; }
+    #shopping #cartcontents .options {
+      border-left: 0;
+      TEXT-ALIGN: center; }
+      #shopping #cartcontents .options a {
+        CURSOR: pointer; }
+  #shopping .ordertotals {
+    width: 250px; }
+    #shopping .ordertotals table {
+      width: 100%;
+      border-collapse: collapse; }
+      #shopping .ordertotals table td {
+        padding: 5px; }
+    #shopping .ordertotals .label {
+      padding-right: 20px;
+      font-weight: normal; }
+    #shopping .ordertotals .value {
+      width: 100px;
+      text-align: right;
+      border: 1px solid #999; }
+    #shopping .ordertotals .grandtotal .label {
+      text-transform: uppercase;
+      font-weight: bold; }
+    #shopping .ordertotals .grandtotal .value {
+      background-color: #EEE;
+      font-weight: bold; }
+    #shopping .ordertotals .totalpaid .label {
+      text-transform: uppercase;
+      font-weight: bold; }
+    #shopping .ordertotals .totalpaid .value {
+      background: #EEE; }
+    #shopping .ordertotals .totaldue .label {
+      text-transform: uppercase;
+      font-weight: bold; }
+    #shopping .ordertotals .totaldue .value {
+      background: #EEE; }
+    #shopping .ordertotals .checkout td {
+      border: 0; }
+  #shopping #shoppingcartfooter {
+    margin-top: 10px; }
+    #shopping #shoppingcartfooter table {
+      WIDTH: 100%; }
+  #shopping #shoppingcheckout {
+    /* Checkout Review */ }
+    #shopping #shoppingcheckout h2 {
+      margin-bottom: 15px;
+      color: #333; }
+    #shopping #shoppingcheckout input {
+      margin-bottom: 0; }
+    #shopping #shoppingcheckout .checkboxes {
+      margin-left: 20px; }
+      #shopping #shoppingcheckout .checkboxes label {
+        font-size: inherit; }
+      #shopping #shoppingcheckout .checkboxes input {
+        float: left;
+        margin-left: -20px; }
+    #shopping #shoppingcheckout .fieldlabel {
+      width: 150px;
+      font-size: 13px;
+      VERTICAL-ALIGN: top;
+      PADDING-TOP: 8px;
+      text-align: right;
+      PADDING-RIGHT: 10px;
+      WHITE-SPACE: nowrap; }
+    #shopping #shoppingcheckout .fieldwrapper {
+      float: left;
+      MARGIN-RIGHT: 15px; }
+    #shopping #shoppingcheckout .fieldwrapper.width120 {
+      WIDTH: 120px; }
+    #shopping #shoppingcheckout .fieldwrapper.width255 {
+      WIDTH: 255px; }
+    #shopping #shoppingcheckout .fieldwrapper .fieldinstructions {
+      font-size: 10px;
+      COLOR: #666;
+      PADDING-LEFT: 0;
+      MARGIN-BOTTOM: 5px;
+      WHITE-SPACE: nowrap; }
+    #shopping #shoppingcheckout .fieldwrapper input[type=text], #shopping #shoppingcheckout .fieldwrapper select {
+      width: 100%;
+      margin-right: 5px;
+      PADDING: 4px;
+      FONT-SIZE: 13px; }
+    #shopping #shoppingcheckout .navigation {
+      PADDING: 30px 0 0 0;
+      BORDER-TOP: 1px solid #EEE;
+      MARGIN: 20px 0 0 0; }
+      #shopping #shoppingcheckout .navigation .next {
+        FLOAT: left; }
+      #shopping #shoppingcheckout .navigation .back {
+        FLOAT: right; }
+    #shopping #shoppingcheckout #paymentmethodsonfile {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #999; }
+      #shopping #shoppingcheckout #paymentmethodsonfile th {
+        text-align: center;
+        border: 1px solid #999;
+        background-color: #EEE;
+        padding: 5px; }
+      #shopping #shoppingcheckout #paymentmethodsonfile td {
+        text-align: left;
+        border-top: 1px dotted #999;
+        padding: 10px;
+        VERTICAL-ALIGN: middle; }
+      #shopping #shoppingcheckout #paymentmethodsonfile .options {
+        width: 200px;
+        border-left: 0;
+        TEXT-ALIGN: left; }
+        #shopping #shoppingcheckout #paymentmethodsonfile .options a {
+          CURSOR: pointer; }
+        #shopping #shoppingcheckout #paymentmethodsonfile .options input[type=radio] {
+          float: left;
+          MARGIN-RIGHT: 5px; }
+        #shopping #shoppingcheckout #paymentmethodsonfile .options label {
+          CURSOR: pointer; }
+        #shopping #shoppingcheckout #paymentmethodsonfile .options img {
+          MARGIN-RIGHT: 10px; }
+      #shopping #shoppingcheckout #paymentmethodsonfile .description img {
+        float: left;
+        MARGIN-RIGHT: 5px; }
+      #shopping #shoppingcheckout #paymentmethodsonfile .description .producttitle {
+        font-size: 12px;
+        COLOR: #666; }
+        #shopping #shoppingcheckout #paymentmethodsonfile .description .producttitle strong {
+          font-size: 13px;
+          COLOR: #333; }
+      #shopping #shoppingcheckout #paymentmethodsonfile .nameoncart {
+        text-align: left; }
+      #shopping #shoppingcheckout #paymentmethodsonfile .expirationdate {
+        text-align: left; }
+    #shopping #shoppingcheckout .newpaymentmethodwrapper {
+      padding: 15px 0;
+      BORDER-BOTTOM: 1px dotted #CCC; }
+    #shopping #shoppingcheckout .newpaymentmethod {
+      width: 100%; }
+      #shopping #shoppingcheckout .newpaymentmethod h3 {
+        MARGIN-TOP: 0; }
+      #shopping #shoppingcheckout .newpaymentmethod td {
+        VERTICAL-ALIGN: top; }
+      #shopping #shoppingcheckout .newpaymentmethod .allowablepaymentmethodicons {
+        WIDTH: 100px;
+        padding-RIGHT: 15px; }
+      #shopping #shoppingcheckout .newpaymentmethod .usenewpaymentmethodbuttonwrapper {
+        FLOAT: right;
+        margin-left: 15px; }
+    #shopping #shoppingcheckout .orderreview {
+      width: 75%;
+      border-collapse: collapse;
+      border: 1px solid #999; }
+      #shopping #shoppingcheckout .orderreview th {
+        text-align: left;
+        border: 1px solid #999;
+        background-color: #EEE;
+        padding: 5px; }
+      #shopping #shoppingcheckout .orderreview td {
+        text-align: left;
+        border-top: 1px dotted #999;
+        padding: 10px;
+        VERTICAL-ALIGN: top;
+        FONT-SIZE: 11px; }
+    #shopping #shoppingcheckout #cartcontents {
+      width: 75%;
+      border-collapse: collapse;
+      border: 1px solid #999; }
+      #shopping #shoppingcheckout #cartcontents th {
+        text-align: center;
+        border: 1px solid #999;
+        background-color: #EEE;
+        padding: 5px; }
+      #shopping #shoppingcheckout #cartcontents td {
+        text-align: left;
+        border-top: 1px solid #999;
+        padding: 5px;
+        VERTICAL-ALIGN: top; }
+      #shopping #shoppingcheckout #cartcontents .description a {
+        COLOR: #222;
+        TEXT-DECORATION: none; }
+      #shopping #shoppingcheckout #cartcontents .description a:hover {
+        TEXT-DECORATION: underline; }
+      #shopping #shoppingcheckout #cartcontents .description img {
+        float: left;
+        MARGIN-RIGHT: 10px;
+        max-width: 50px;
+        max-height: 50px; }
+      #shopping #shoppingcheckout #cartcontents .description .producttitle {
+        font-size: 13px;
+        FONT-WEIGHT: bold; }
+      #shopping #shoppingcheckout #cartcontents .description .itemcode {
+        font-size: 10px;
+        COLOR: #999; }
+      #shopping #shoppingcheckout #cartcontents .priceeach {
+        text-align: right; }
+      #shopping #shoppingcheckout #cartcontents .bv {
+        text-align: right; }
+      #shopping #shoppingcheckout #cartcontents .cv {
+        text-align: right; }
+      #shopping #shoppingcheckout #cartcontents .quantity {
+        text-align: center; }
+        #shopping #shoppingcheckout #cartcontents .quantity input[type=text] {
+          width: 50px;
+          text-align: center; }
+      #shopping #shoppingcheckout #cartcontents .total {
+        text-align: right; }
+      #shopping #shoppingcheckout #cartcontents .options {
+        TEXT-ALIGN: center; }
+        #shopping #shoppingcheckout #cartcontents .options a {
+          CURSOR: pointer; }
+    #shopping #shoppingcheckout #ordertotalsreviewwrapper {
+      float: right;
+      width: 170px;
+      border: 1px solid #999;
+      background-color: #EEE;
+      PADDING: 3px;
+      TEXT-ALIGN: center; }
+      #shopping #shoppingcheckout #ordertotalsreviewwrapper a.placeorderbutton {
+        MARGIN: 15px; }
+    #shopping #shoppingcheckout #ordertotalsreview {
+      border: 1px solid #CCC;
+      BACKGROUND-COLOR: White;
+      width: 100%;
+      border-collapse: collapse; }
+      #shopping #shoppingcheckout #ordertotalsreview td {
+        padding: 5px; }
+        #shopping #shoppingcheckout #ordertotalsreview td h3 {
+          MARGIN: 0; }
+        #shopping #shoppingcheckout #ordertotalsreview td .fieldlabel {
+          padding-right: 20px;
+          text-align: left; }
+        #shopping #shoppingcheckout #ordertotalsreview td .value {
+          width: 100px;
+          text-align: right; }
+      #shopping #shoppingcheckout #ordertotalsreview .discount {
+        color: Red; }
+      #shopping #shoppingcheckout #ordertotalsreview .shipping td {
+        BORDER-TOP: 1px dotted #CCC; }
+      #shopping #shoppingcheckout #ordertotalsreview .grandTotal td {
+        BORDER-TOP: 1px solid #CCC;
+        FONT-WEIGHT: bold;
+        FONT-SIZE: 15px;
+        TEXT-ALIGN: center; }
+      #shopping #shoppingcheckout #ordertotalsreview .placeOrder td {
+        border: 0;
+        TEXT-ALIGN: center; }
+

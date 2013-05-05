@@ -1,0 +1,86 @@
+/* Global Styles */
+* { outline: 0px; }
+body,
+html { MARGIN: 0; PADDING: 0; padding-bottom: 50px; FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, Tahoma, Sans-Serif; COLOR: #3A3A3A; BACKGROUND-COLOR: #FFF; }
+
+
+/* Print styles */
+#printwrapper  { WIDTH: 768px; MARGIN: 0 auto; background: #FFF; }
+#printcontentwrapper  { WIDTH: auto; margin-top: 5px; BACKGROUND-COLOR: #FFF; 
+    #pagecontentwrapper  { padding: 15px 0; background: #FFF; }
+}
+
+
+#companyinformation  { 
+    td  { vertical-align: top; }
+    .logo  { padding-right: 15px; 
+        img  { max-width: 100px; max-height: 100px; }
+	}
+    .address  { 
+        h2  { margin: 0 0 10px 0; padding: 0; font-size: 21px; letter-spacing: 0; }
+	}
+}
+
+#invoiceheader  { text-align: right; float: right; 
+    h1  { text-transform: uppercase; color: #CCC; font-size: 36px; margin: 0 0 15px 0; padding: 0; letter-spacing: 0; font-weight: bold; }
+}
+
+
+#invoice  { 
+    .label  { text-align: right; font-weight: bold; padding-right: 15px; }
+    .value  { text-align: left; }
+	.sectiondivider  { width: auto; height: 4px; margin: 30px 0; background-color: #EEE; border-top: 1px solid #CCC; }
+	.totalcolumnwidth  { width: 130px; }
+
+	.ordertotals  { 
+		table  { border-collapse: collapse; 
+			td  { padding: 5px; }
+		}
+		.subtotal  { }
+		.label  { width: 100%; padding-right: 20px; font-weight: normal; }
+		.value  { text-align: right; border: 1px solid #999; }
+		.grandtotal  { 
+			.label  { text-transform: uppercase; font-weight: bold; }
+			.value  { background-color: #EEE; font-weight: bold; }
+		}
+		.totalpaid  {
+			.label  { text-transform: uppercase; font-weight: bold; }
+			.value  { background: #EEE; }
+		}
+		.totaldue  {
+			.label  { text-transform: uppercase; font-weight: bold; }
+			.value  { background: #EEE; }
+		}
+	}
+
+	.billingandshippingaddresses  { margin-bottom: 30px; 
+		table  { width: 100%; 
+			td  { vertical-align: top; }
+            .label  { white-space: nowrap; }
+            .value  { }
+		}
+	}
+
+	.orderglobaldetails  { margin-bottom: 30px; 
+		table  { width: 100%; border-collapse: collapse; 
+			th  { text-align: center; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+			td  { text-align: center; border: 1px solid #999; padding: 5px; }
+		}
+	}
+
+	.orderitemdetails  { 
+		table  { width: 100%; border-collapse: collapse; border: 1px solid #999; 
+			th  { text-align: center; border: 1px solid #999; background-color: #EEE; padding: 5px; }
+			td  { text-align: left; border-right: 1px solid #999; border-top: 1px solid #CCC; padding: 5px; }
+			td.alignright  { text-align: right; }
+			td.aligncenter  { text-align: center; }
+			tr:nth(2n+1) td  { background-color: #EEE; }
+		}
+	}
+
+	.ordernotes  { width: auto; margin: 30px 50px 0 0; 
+		.noteswrapper  { border: 1px dotted #999; margin-top: 5px; padding: 5px; height: 100px; }
+	}
+
+	.thankyoumessage  { margin-top: 30px; padding: 15px; background-color: #EEE; text-align: center; font-style: italic; text-transform: uppercase; }
+}

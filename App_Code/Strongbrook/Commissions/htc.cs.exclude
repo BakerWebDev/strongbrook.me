@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Strongbrook.Bonus;
+using Exigo.OData;
+using Exigo.Settings;
+using Exigo.API;
+using System.Web.UI;
+
+/// <summary>
+/// Summary description for htc
+/// </summary>
+public class htc : Bonus
+{
+    private int CustomerID;
+
+    public htc()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
+
+    public htc(string toCustomer)
+    {
+        this.ToCustomer = toCustomer;
+        this.itemCode = BonusSettings.HTC.ItemCode;
+        this.PeriodTypeID = BonusSettings.HTC.PeriodType;
+        this.PeriodID = BonusSettings.HTC.StartPeriod;
+    }
+
+    public List<Order> GetTransactionOrders()
+    {
+        List<Order> orders = GetListOfQualifiedOrdersHTC(PeriodID, PeriodTypeID, itemCode);
+        List<Customer> unilevelDownline = GetDownlineUnilevelTree(ToCustomer);
+        List<Order> ordersCountedInPeriod;
+
+        if (orders != null && unilevelDownline != null)
+        {
+            ordersCountedInPeriod = TryOrdersQualifiedForBonus("htc", orders, unilevelDownline);
+
+            return ordersCountedInPeriod;
+        }
+        else
+        {
+            return ordersCountedInPeriod = new List<Order>();
+        }
+    }
+}

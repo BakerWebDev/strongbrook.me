@@ -1,0 +1,115 @@
+.btn-toolbar div.btn-group {
+  display: inline; }
+
+/* MESSAGES LIST */
+table.messageslist .options {
+  width: 25px;
+  text-align: center; }
+table.messageslist .details {
+  width: 20px;
+  text-align: left; }
+table.messageslist .from {
+  width: 150px;
+  text-align: left;
+  white-space: nowrap; }
+  table.messageslist .from img {
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 10px; }
+table.messageslist .summary {
+  width: auto; }
+table.messageslist .received {
+  width: 120px;
+  text-align: right;
+  white-space: nowrap; }
+table.messageslist .clickable {
+  cursor: pointer; }
+table.messageslist tr.status-read td {
+  background-color: #eeeeee; }
+table.messageslist tr.status-unread td {
+  background-color: #ffffff;
+  font-weight: bold; }
+table.messageslist tr.status-highlighted td {
+  background-color: #ffffcc; }
+table.messageslist .nomessages {
+  text-align: center;
+  color: #999; }
+
+/* CREATE MESSAGE */
+.createmessage {
+  background-color: #eeeeee;
+  padding: 10px; }
+  .createmessage .attachments input[type=file] {
+    display: block; }
+
+/* VIEW MESSAGE */
+.viewmessage {
+  background-color: #eeeeee;
+  padding: 10px; }
+  .viewmessage .from .avatar {
+    float: left;
+    margin-right: 10px;
+    max-height: 40px;
+    max-width: 40px; }
+  .viewmessage .from .name {
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap; }
+  .viewmessage .options {
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap; }
+    .viewmessage .options .btn-group {
+      float: right; }
+    .viewmessage .options .age {
+      height: 40px;
+      line-height: 40px;
+      text-align: right;
+      float: right;
+      margin-right: 15px; }
+  .viewmessage h3 {
+    font-size: 28px;
+    margin: 0;
+    padding: 0; }
+  .viewmessage .replybox {
+    font-size: 12px;
+    color: #999; }
+    .viewmessage .replybox .avatar {
+      float: left;
+      max-width: 24px;
+      max-height: 24px;
+      margin-right: 10px; }
+
+.recipientlist {
+  height: 240px;
+  overflow-y: scroll; }
+  .recipientlist .options {
+    width: 25px;
+    text-align: center; }
+  .recipientlist .id {
+    width: 70px;
+    text-align: left; }
+  .recipientlist .description {
+    text-align: left; }
+    .recipientlist .description .avatar {
+      max-width: 16px;
+      max-height: 16px;
+      float: left;
+      margin-right: 10px; }
+    .recipientlist .description .name {
+      white-space: nowrap; }
+
+.nav-seamless {
+  margin-bottom: 0; }
+
+.nav-seamless + .tab-content {
+  height: 240px;
+  border: 1px solid #CCC;
+  border-top: 0;
+  padding: 30px 10px 10px 10px; }
+
+.selectedrecipients {
+  padding-top: 15px; }
+  .selectedrecipients input {
+    width: 97%; }
+

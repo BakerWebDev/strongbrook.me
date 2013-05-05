@@ -1,0 +1,133 @@
+@charset "UTF-8";
+.customerdetails {
+  line-height: 14px; }
+  .customerdetails .avatar {
+    float: left;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 10px; }
+  .customerdetails .name {
+    display: block;
+    font-weight: bold; }
+  .customerdetails .title {
+    color: #999;
+    font-size: 0.85em; }
+
+.column-alignright {
+  text-align: right !important; }
+
+.thumbnails .thumbnail {
+  background-color: #ffffff; }
+  .thumbnails .thumbnail .details {
+    padding: 5px; }
+  .thumbnails .thumbnail .avatar {
+    margin-bottom: 5px; }
+  .thumbnails .thumbnail .contactinformation {
+    margin-top: 10px;
+    font-size: 0.85em;
+    white-space: nowrap; }
+
+.gridreporttablewrapper a {
+  cursor: pointer; }
+.gridreporttablewrapper a.sortable.asc:before {
+  content: '▴ '; }
+.gridreporttablewrapper a.sortable.desc:before {
+  content: '▾ '; }
+
+.gridreporttable .cell-checkbox {
+  width: 30px; }
+.gridreporttable .cell-number {
+  text-align: right; }
+.gridreporttable .text-primary {
+  font-weight: bold;
+  display: block; }
+.gridreporttable .text-secondary {
+  font-size: 11px;
+  color: #666; }
+.gridreporttable .image-avatar {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  max-width: 35px;
+  max-height: 35px; }
+.gridreporttable .image-avatar img {
+  width: inherit; }
+.gridreporttable .align-center {
+  text-align: center; }
+.gridreporttable .align-right {
+  text-align: right; }
+
+.preloaderwrapper {
+  text-align: center;
+  font-size: 17px;
+  height: 48px;
+  line-height: 48px; }
+
+.preloaderwrapper img {
+  display: block;
+  margin: 0 auto; }
+
+#organizationdetailreport h2 {
+  color: #333; }
+#organizationdetailreport .popovercontent {
+  line-height: 16px; }
+  #organizationdetailreport .popovercontent .avatar {
+    max-width: 75px;
+    max-height: 75px;
+    float: left;
+    margin-right: 10px; }
+  #organizationdetailreport .popovercontent .name {
+    font-weight: bold; }
+#organizationdetailreport .infinitescrollwrapper {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+#organizationdetailreport .details {
+  position: relative;
+  font-size: 15px;
+  margin-bottom: 20px; }
+  #organizationdetailreport .details .name {
+    font-size: 17px;
+    font-weight: bold; }
+  #organizationdetailreport .details .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    font-size: 10px;
+    text-transform: uppercase; }
+#organizationdetailreport .fieldlabel {
+  text-align: left; }
+#organizationdetailreport .fieldvalue {
+  text-align: right !important; }
+#organizationdetailreport .filtercriteriawrapper input {
+  width: 190px; }
+#organizationdetailreport .progress {
+  margin-bottom: 5px; }
+#organizationdetailreport .progress-upperlabel {
+  font-size: 13px;
+  margin-bottom: 5px; }
+#organizationdetailreport .progress-upperlabel-large {
+  font-size: 17px; }
+#organizationdetailreport .progressbarwrapper {
+  margin-bottom: 20px; }
+  #organizationdetailreport .progressbarwrapper .progress-lowerlabel {
+    font-size: 11px;
+    color: #999; }
+  #organizationdetailreport .progressbarwrapper .progress-lowerlabel.pull-right {
+    text-align: right; }
+#organizationdetailreport .chart {
+  float: left;
+  width: 75px;
+  padding: 0 15px 20px 15px; }
+  #organizationdetailreport .chart .percentage {
+    font-size: 12px; }
+  #organizationdetailreport .chart .chartlabel {
+    width: 90px;
+    text-align: center; }
+#organizationdetailreport #downlinelistwrapper {
+  HEIGHT: 500px;
+  OVERFLOW-Y: scroll;
+  OVERFLOW-X: hidden;
+  PADDING-TOP: 5px; }
+

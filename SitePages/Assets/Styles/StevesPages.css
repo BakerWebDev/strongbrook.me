@@ -1,0 +1,74 @@
+﻿/* CSS Document */
+
+body {
+	background-image: url(../images/background_time-is-now.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #2c3235;
+}
+
+img {
+	border: 0;
+}
+
+.main-wrapper {
+	width: 1005px;
+	height: 865px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.header-content {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header-rep-info-container {
+	color: #FFFFFF;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	margin-left: 470px;
+	margin-right: 0;
+	margin-top: 5px;
+	position: absolute;
+	text-align: right;
+	width: 250px;
+}
+
+.cta-container {
+	position: absolute;
+	margin-left: 675px;
+	margin-top: 225px;
+	width: 261px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+}
+
+.cta-container p {
+	text-align: left;	
+}
+
+.video-container {
+	height: 348px;
+	margin-left: 57px;
+	margin-top: 125px;
+	position: absolute;
+	width: 521px;
+}
+
+.copyright-container {
+	color: #CCCCCC;
+	font-family: Verdana,Geneva,sans-serif;
+	font-size: 10px;
+	margin-top: 750px;
+	position: absolute;
+	margin-left: 25px;
+}
+

@@ -1,0 +1,22 @@
+﻿#joinButton {
+	color: #333333;
+	float: right;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	top: 300px;
+    right:450px;
+}
+#joinButton a {
+	color: #FFF;
+	padding: 1px 15px 3px 15px;
+	background-color: #ed9e09;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+	text-decoration: none;
+}
+#joinButton a:hover {
+	background-color: #4089bf;
+}
