@@ -182,7 +182,7 @@ You always carry the title of the highest rank you reach, but are “Paid As” 
                     <a id="DownlineWeeklyAverage" href="GPR_MonthlyDetails.aspx">
                         <div class="tile tile-icon size-1x1 theme-peach2" 
                             title="The average number of Game Plan Report requests (GPRs) per Active IBD in your sales team during the past 4 weeks.">
-                            <h2><% Render_UniLevelDownline_GPR_Average_Per_Month(); %></h2>
+                            <h2><% Render_AveGPRsperIBD(); %></h2>
                             <h4>Ave GPRs per IBD</h4>
                         </div>
                     </a>

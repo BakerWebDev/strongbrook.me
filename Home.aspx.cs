@@ -127,7 +127,6 @@ public partial class Home : System.Web.UI.Page
         // Return the model
         return model; 
     }
-
     public CommissionResponse FetchCurrentCommissions()
     {
         try
@@ -398,14 +397,33 @@ public partial class Home : System.Web.UI.Page
         return nodes;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public List<ReportDataNode> FetchGPRMonthlyReportData()
     {
         #region Query the OData tables
         var query = ExigoApiContext.CreateODataContext().UniLevelTreePeriodVolumes
             .Where(c => c.TopCustomerID == Identity.Current.CustomerID)
             .Where(c => c.PeriodTypeID == PeriodTypes.Monthly)
-            .Where(c => c.Period.IsCurrentPeriod)
-            .Where(c => c.PeriodVolume.Volume83 != 0);
+            .Where(c => c.Period.IsCurrentPeriod);
         #endregion Query the OData tables
 
         #region Fetch the nodes
@@ -431,9 +449,24 @@ public partial class Home : System.Web.UI.Page
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public ReportDataNode FetchPersonalGPRWeeklyReportData()
     {
-        //      Query the OData tables      //
         #region Query the OData tables
         var query = ExigoApiContext.CreateODataContext().PeriodVolumes
             .Where(c => c.CustomerID == Identity.Current.CustomerID)
@@ -441,7 +474,6 @@ public partial class Home : System.Web.UI.Page
             .Where(c => c.Period.IsCurrentPeriod);
         #endregion Query the OData tables
 
-        //      Fetch the nodes     //
         #region Fetch the nodes
         var nodes = query.Select(c => new ReportDataNode
         {
@@ -622,37 +654,63 @@ public partial class Home : System.Web.UI.Page
         var writer = new HtmlTextWriter(Response.Output);
         writer.Write(html.ToString());    
     }
-    public void Render_UniLevelDownline_GPR_Average_Per_Month()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void Render_AveGPRsperIBD()
     {
         var html = new StringBuilder();
 
-        //      Build the data to be used.
+        // Build the data to be used.
         var nodes = FetchGPRMonthlyReportData();
 
-        //      If nodes returns any data proceed.
+        // If nodes returns any data proceed.
         if (nodes.Count > 0)
         {
-            #region Render the Average number of GPR's for UniLevel downline.
+            #region Get the average of the downline GPR credits.
 
-            #region Turn the list into an array, and get the average of those numbers.
 
-            // Turn the list into an array
-            decimal[] listNumbersConverted = MonthlyList.ToArray();
 
             // Add the credits for each qualified person together.
-            decimal sumOfGPRs = 0;
-            foreach (decimal x in listNumbersConverted)
+            decimal GPRsCreatedByPeopleInMyDownlind = 0;
+            foreach(var person in nodes)
             {
-                sumOfGPRs = x + sumOfGPRs++;
+                GPRsCreatedByPeopleInMyDownlind = person.VolumeBucket83 + GPRsCreatedByPeopleInMyDownlind++;
             }
 
             // Get the total number of qualified downline customers.
-            decimal count = listNumbersConverted.Count();
+            decimal peopleInMyDownline = MonthlyList.Count();
 
             // Divide the total number of organizational credits by the number of customers in the organization.
-            decimal averageNum = sumOfGPRs / count;
+            decimal averageNum = GPRsCreatedByPeopleInMyDownlind / peopleInMyDownline;
 
-            #endregion Turn the list into an array, and get the average of those numbers.
+
+
+            #endregion Get the average of those numbers.
+
+            #region Render the average of the downline GPR credits.
 
             if (averageNum != 0)
             {
@@ -661,13 +719,17 @@ public partial class Home : System.Web.UI.Page
                     "
                     , averageNum.ToString("N")
                     );
+
 //                html.AppendFormat(@"
-//                    {1}<br />
-//                    {0:N}
+//                    <span style=""font-size:18px; margin-top:0px; margin-bottom:0px;"">Average: {0}</span><br />
+//                    <span style=""font-size:18px; margin-top:0px; margin-bottom:0px;"">People: {1}</span><br />
+//                    <span style=""font-size:18px; margin-top:0px; margin-bottom:0px;"">sumOfGPRs: {2}</span><br />
 //                    "
 //                    , averageNum.ToString("N")
-//                    , count
+//                    , peopleInMyDownline.ToString("N")
+//                    , GPRsCreatedByPeopleInMyDownlind.ToString("N")
 //                    );
+
             }
             else
             {
@@ -678,7 +740,7 @@ public partial class Home : System.Web.UI.Page
                     );
             }
 
-            #endregion Render the Average number of GPR's for UniLevel downline.
+            #endregion Render the average of the downline GPR credits.
         }
         else
         {
@@ -692,6 +754,33 @@ public partial class Home : System.Web.UI.Page
         var writer = new HtmlTextWriter(Response.Output);
         writer.Write(html.ToString());
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void Render_Personal_GPR_Count_PeriodType_Weekly()
     {
         var html = new StringBuilder();

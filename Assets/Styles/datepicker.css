@@ -1,0 +1,44 @@
+
+
+#DatePicker .calendar .ajax__calendar_container {
+    border: 1px solid #646464;
+    background-color: #eee;
+    color: #6699FF;
+    height: 240px;
+    width: 210px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+}
+
+
+    #DatePicker .calendar .ajax__calendar_other .ajax__calendar_day,
+    #DatePicker .calendar .ajax__calendar_other .ajax__calendar_year,
+    #DatePicker .calendar .ajax__calendar_other .ajax__calendar_month {
+        color: black;
+    }
+
+    #DatePicker .calendar .ajax__calendar_hover .ajax__calendar_day,
+    #DatePicker .calendar .ajax__calendar_hover .ajax__calendar_month,
+    #DatePicker .calendar .ajax__calendar_hover .ajax__calendar_year {
+        font-weight:bold;
+        color: blue;
+    }
+
+    #DatePicker .calendar .ajax__calendar_active .ajax__calendar_day,
+    #DatePicker .calendar .ajax__calendar_active .ajax__calendar_month,
+    #DatePicker .calendar .ajax__calendar_active .ajax__calendar_year {
+        color: red;
+        font-size:12px;
+        font-weight:bold;
+    }
+
+
+
+/* TEXTBOX */
+#DatePicker .textbox {
+    font-size: 10px;
+    text-align: center;
+    color: #CCCCCC;
+}

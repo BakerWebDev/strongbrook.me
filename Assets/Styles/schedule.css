@@ -2,8 +2,7 @@
 
 
 
-
-.scheduler { min-height:445px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; border:1px solid #aaa; padding:15px; position:relative; background-color:white; overflow-x:hidden; }
+.scheduler { min-height:545px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; border:1px solid #aaa; padding-top:15px; padding-left:15px; padding-right:15px; padding-bottom:0px; position:relative; background-color:white; overflow-x:hidden; }
 .scheduler .heading { margin-top:0px; }
 .scheduler .notes { margin-right:20px; color:#888; font-size:15px; line-height:130%; }
 .scheduler .reminder { background-color:#f3f3f3; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:15px; }
